@@ -29,6 +29,16 @@ public class Controller {
              optional) {
             System.out.println(a);
         }
+
+        List<Alien> sort = repo.findByTechSorted("Aerial");
+        for (Alien b:
+                sort) {
+            System.out.println(b);
+        }
         return new ArrayList<>();
+    }
+    @RequestMapping("get/{id}")
+    public String getA(@PathVariable("id") int id){
+        return repo.findById(id).toString();
     }
 }
