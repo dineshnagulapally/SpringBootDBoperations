@@ -41,4 +41,18 @@ public class Controller {
     public Optional<Alien> getA(@PathVariable("id") int id){
         return repo.findById(id);
     }
+    @PostMapping("/add")
+    public void Addalien(@RequestBody Alien alien){
+        repo.save(alien);
+    }
+
+    @PutMapping("/update")
+    public void update(@RequestBody Alien alien){
+        repo.save(alien);
+    }
+
+    @DeleteMapping("/drop/{id}")
+    public void drop(@PathVariable("id") int id){
+        repo.deleteById(id);
+    }
 }
