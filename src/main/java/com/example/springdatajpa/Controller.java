@@ -38,7 +38,7 @@ public class Controller {
         return new ArrayList<>();
     }
     @RequestMapping("get/{id}")
-    public String getA(@PathVariable("id") int id){
-        return repo.findById(id).toString();
+    public Optional<Alien> getA(@PathVariable("id") int id){
+        return repo.findById(id);
     }
 }
